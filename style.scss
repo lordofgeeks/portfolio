@@ -1,0 +1,114 @@
+// Variables
+$font-color: #FFF;
+
+@mixin fade-transition($speed) {
+	-webkit-transition: $speed linear;
+  -moz-transition: $speed linear;
+  transition: $speed linear;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Lato;
+  background: #888;
+  color: $font-color;
+  background-image: url('assets/images/bg.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+// WRAPPER FOR SITE
+.grid {
+  height: 100vh;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 120px 1fr 120px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .site-logo {
+    background: #FFF;
+    color: #000;
+    font-weight: 700;
+    font-size: 22pt;
+    padding: 8px;
+    opacity: 0.8;
+  }
+
+  button {
+    color: $font-color;
+    font-weight: 200;
+    font-size: 14pt;
+    background: none;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid transparent;
+    transition: 0.15s linear;
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: 4px solid #fa8484;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  .site-greetings {
+
+    grid-area: 2 / 2 / 1 / 5;
+    // grid-column-start: 2;
+    // grid-column-end: 5;
+    // grid-row-start: 1;
+    // grid-row-end: 2;
+    align-self: end;
+    font-weight: 800;
+    font-size: 82pt;
+  }
+  
+  .site-introduction {
+    grid-area: 2 / 2 / 2 / 5;
+    font-weight: 300;
+    font-size: 14pt;
+  }
+}
+.social {
+  display: flex;
+  justify-content: center;
+  
+  a {
+    text-decoration: none;
+    font-weight: 300;
+    color: $font-color;
+    margin: 10px;
+  }
+}
+
+.underline--magical {
+  background-image: linear-gradient(120deg, #fa8484 0%, #b62c2c 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  &:hover {
+    background-size: 100% 88%;
+  }
+}
