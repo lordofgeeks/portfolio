@@ -2,58 +2,72 @@
 <html>
 <head>
 	<title>Home</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  </head>
+</head>
 
-  <body>
-    <div class="grid">
-      <div class="header">
-        <div class="site-logo">LOG</div>
-        <div class="site-nav">
-          <a href="#"><button>About</button></a>
-          <a href="https://blog.lordofgeeks.com"><button>Blog</button></a>
-          <a href="#"><button>Portfolio</button></a>
-        </div>
-      </div>
-      <div class="content">
-        <div class="site-greetings">
-          HELLO,
-        </div>
-        <div class="site-introduction">
-          I am Kai Hong from <span class="underline--magical"><b>Singapore,</b></span><br />
-          A Software Developer<br />
-          Soon-to-be Security Consultant.
-        </div>
-      </div>
-      <div class="social">
-        <a href="https://twitter.com/lordofgeeks">TWITTER</a>
-        <a href="https://github.com/lordofgeeks">GITHUB</a>
-        <a href="https://www.instagram.com/lordofgeeks/">INSTAGRAM</a>
+<body>
+  <div class="grid">
+    <div class="header">
+      <a href="https://lordofgeeks.com"><div class="site-logo">LOG</div></a>
+      <div class="site-nav">
+        <a href="about.html"><button>About</button></a>
+        <a href="https://blog.lordofgeeks.com"><button>Blog</button></a>
+        <a href="portfolio.html"><button>Portfolio</button></a>
       </div>
     </div>
-  </body>
-  <script>
-    function* getGreeting() {
-      let greetings = [
-        "HELLO",
-        "你好",
-        "OHAYO",
-        "BONJOUR",
-        "GUTEN TAG",
-        "SALUT"
-      ];
-      let index = 0;
-      while(index < greetings.length) {
-        yield greetings[index];
-        index++;
-      }
-      if(index > greetings.length) {
-        index = 0;
-      }
+    <div class="content">
+      <div class="site-greetings" id="site-greeting">
+        HELLO
+      </div>
+      <div class="site-introduction">
+        I am Kai Hong from <span class="underline--magical"><b>Singapore,</b></span><br />
+        A Software Developer<br />
+        Soon-to-be Security Consultant.
+      </div>
+    </div>
+    <div class="social">
+      <a href="https://twitter.com/lordofgeeks" id="twitter-link">TWITTER</a>
+      <a href="https://github.com/lordofgeeks" id="github-link">GITHUB</a>
+      <a href="https://www.instagram.com/lordofgeeks/" id="instagram-link">INSTAGRAM</a>
+    </div>
+  </div>
+</body>
+<script>
+function* getGreeting() {
+  let index = 0;
+  let greetings = [
+    "你好",
+    "おはよう",
+    "HEI",
+    "SALVE",
+    "SALUT",
+    "HELLO",
+  ];
+  while(true) {
+    yield greetings[index];
+    index++;
+    if(index >= greetings.length) {
+      index = 0;
     }
-    let greet_timer = setInterval(getGreeting, 1000);
-  </script>
+  }
+}
+function setGreeting() {
+  let element = document.getElementById("site-greeting");
+  if(element) {
+    element.style.opacity = 0;
+    setTimeout(() => {
+      element.innerHTML = gg.next().value;
+      // element.innerHTML = gg.next().value + ",";
+      element.style.opacity = 1;
+    }, 750);
+  }
+}
+
+// gg = Greeting Generator
+var gg = getGreeting();
+var greet_timer = setInterval(setGreeting, 4000); // 3 seconds
+</script>
 </html>

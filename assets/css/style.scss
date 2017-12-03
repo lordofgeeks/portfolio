@@ -15,11 +15,14 @@ body {
   font-family: Lato;
   background: #888;
   color: $font-color;
-  background-image: url('assets/images/bg.jpg');
+  background-image: url('../images/bg.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+a {
+  text-decoration: none;
 }
 
 // WRAPPER FOR SITE
@@ -38,12 +41,17 @@ body {
   align-items: flex-end;
 
   .site-logo {
-    background: #FFF;
+    background: #F5F5F5;
     color: #000;
     font-weight: 700;
     font-size: 22pt;
     padding: 8px;
-    opacity: 0.8;
+    opacity: 0.7;
+    @include fade-transition(0.2s);
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   button {
@@ -73,32 +81,62 @@ body {
   grid-template-rows: repeat(3, 1fr);
 
   .site-greetings {
-
-    grid-area: 2 / 2 / 1 / 5;
+    grid-area: 2 / 2 / 1 / 7;
     // grid-column-start: 2;
-    // grid-column-end: 5;
+    // grid-column-end: 2;
     // grid-row-start: 1;
-    // grid-row-end: 2;
+    // grid-row-end: 5;
     align-self: end;
     font-weight: 800;
     font-size: 82pt;
+    text-shadow: 0 0 4px rgb(38, 38, 38);
+    transition: opacity 0.7s ease-in;
   }
   
   .site-introduction {
     grid-area: 2 / 2 / 2 / 5;
     font-weight: 300;
+    text-shadow: 0 0 2px rgb(38, 38, 38);
     font-size: 14pt;
+    color: rgb(205, 205, 205);
   }
 }
 .social {
   display: flex;
   justify-content: center;
-  
+  #github-link {
+    background: #4078c0;
+    &:hover {
+      background: darken(#4078c0, 20%);
+    }
+  }
+  #twitter-link {
+    background: #1DA1F2;
+    &:hover {
+      background: darken(#1DA1F2, 20%);
+    }
+  }
+  #instagram-link {
+    background: #262626;
+    background: darken(#262626, 20%);
+  }
   a {
     text-decoration: none;
     font-weight: 300;
-    color: $font-color;
+    text-shadow: 0 0 3px rgb(38, 38, 38);
+    color: rgb(228, 228, 228);
     margin: 10px;
+    // line-height: 14pt;
+    padding: 5px;
+    border: 1px solid transparent;
+    height: 20px;
+    border-radius: 3px;
+    @include fade-transition(0.2s);
+
+    &:hover {
+      color: $font-color;
+      border: 1px solid #cccccc;
+    }
   }
 }
 
@@ -110,5 +148,47 @@ body {
   transition: background-size 0.25s ease-in;
   &:hover {
     background-size: 100% 88%;
+  }
+}
+
+.about-title {
+  grid-area: 1 / 3 / 1 / 5;
+  font-size: 26pt;
+  font-weight: 800;
+  text-align: center;
+}
+.about-content {
+  grid-area: 2 / 2 / 2 / 6;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 640px) {
+  .grid {
+    margin: 0;
+    height: 100vh;
+    grid-template-rows: 50px 1fr 50px;
+  }
+  .header {
+    align-items: flex-start;
+    .site-logo {
+      font-size: 14pt;
+    }
+    .site-nav {
+      button {
+        font-size: 10pt;
+      }
+    }
+  }
+  .content {
+    .site-greetings {
+      grid-area: 1 / 1 / 1 / 7;
+      text-align: center;
+      font-size: 60pt;
+    }
+    .site-introduction {
+      grid-area: 2 / 1 / 2 / 7;
+      text-align: center;
+    }
   }
 }
