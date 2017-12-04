@@ -25,6 +25,9 @@ body {
 a {
   text-decoration: none;
 }
+a:focus {
+  outline: none;
+}
 
 // WRAPPER FOR SITE
 .grid {

@@ -19,6 +19,10 @@ a {
   text-decoration: none;
 }
 
+a:focus {
+  outline: none;
+}
+
 .grid {
   height: 100vh;
   max-height: 100vh;
