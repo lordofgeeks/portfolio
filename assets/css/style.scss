@@ -1,5 +1,6 @@
 // Variables
 $font-color: #FFF;
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 @mixin fade-transition($speed) {
 	-webkit-transition: $speed linear;
