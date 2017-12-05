@@ -23,6 +23,10 @@ a:focus {
   outline: none;
 }
 
+a:active {
+  outline: none;
+}
+
 .grid {
   height: 100vh;
   max-height: 100vh;
