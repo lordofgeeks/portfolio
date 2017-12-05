@@ -27,9 +27,12 @@ a:active {
   outline: none;
 }
 
+#wrapper {
+  display: none;
+}
+
 .grid {
   height: 100vh;
-  max-height: 100vh;
   margin-left: 100px;
   margin-right: 100px;
   display: grid;

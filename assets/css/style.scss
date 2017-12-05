@@ -32,10 +32,14 @@ a:active {
   outline: none;
 }
 
+// For fadein transition
+#wrapper {
+  display: none;
+}
+
 // WRAPPER FOR SITE
 .grid {
   height: 100vh;
-  max-height: 100vh;
   margin-left: 100px;
   margin-right: 100px;
   display: grid;
