@@ -9,6 +9,7 @@ body {
   background: #888;
   color: #FFF;
   background-image: url("../images/bg.jpg");
+  background-color: #444446;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -29,6 +30,10 @@ a:active {
 
 #wrapper {
   display: none;
+}
+
+.subgrid {
+  display: grid;
 }
 
 .grid {

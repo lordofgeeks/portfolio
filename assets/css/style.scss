@@ -17,6 +17,7 @@ body {
   background: #888;
   color: $font-color;
   background-image: url('../images/bg.jpg');
+  background-color: #444446;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -35,6 +36,9 @@ a:active {
 // For fadein transition
 #wrapper {
   display: none;
+}
+.subgrid {
+  display: grid;
 }
 
 // WRAPPER FOR SITE
