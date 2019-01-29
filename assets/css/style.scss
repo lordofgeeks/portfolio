@@ -1,11 +1,19 @@
 // Variables
-$font-color: #FFF;
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
+$font-color: rgb(228, 228, 228);
+$muted-font-color: rgb(177, 177, 177);
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,400');
 @mixin fade-transition($speed) {
 	-webkit-transition: $speed linear;
   -moz-transition: $speed linear;
   transition: $speed linear;
+}
+
+@mixin grayscale($amount) {
+  -webkit-filter: grayscale($amount);
+  -moz-filter:    grayscale($amount);
+  -ms-filter:     grayscale($amount);
+  -o-filter:      grayscale($amount);
 }
 
 * {
@@ -13,15 +21,27 @@ $font-color: #FFF;
   margin: 0;
 }
 body {
-  font-family: 'Lato', sans-serif;
-  background: #888;
+  font-family: 'Fira Sans', sans-serif;
+  background: #252525;
   color: $font-color;
+
+}
+.bg-image {
   background-image: url('../images/bg.jpg');
-  background-color: #444446;
+  opacity: 0.5;
+  background-color: #252525;
+  background-position: center;
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 a {
   text-decoration: none;
@@ -53,16 +73,19 @@ a:active {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  justify-content: right;
   align-items: flex-end;
+  // font-family: 'Fira Sans', sans-serif;
 
   .site-logo {
-    background: #FFF;
-    color: #000;
+    background: rgb(56, 56, 56);
+    color: rgb(209, 209, 209);
+    border: rgb(133, 133, 133) solid 1px;
     // color: $font-color;
-    font-weight: 300;
-    font-size: 22pt;
-    padding: 8px;
+    font-weight: 200;
+    font-size: 18pt;
+    padding: 4px;
     opacity: 0.7;
     @include fade-transition(0.2s);
 
@@ -72,9 +95,9 @@ a:active {
   }
 
   button {
-    color: $font-color;
+    color: $muted-font-color;
     font-weight: 200;
-    font-size: 14pt;
+    font-size: 12pt;
     background: none;
     text-transform: uppercase;
     border: none;
@@ -108,8 +131,16 @@ a:active {
     font-size: 82pt;
     text-shadow: 0 0 4px rgb(38, 38, 38);
     transition: opacity 0.7s ease-in;
+
+    color: #d5d5d5;
+    // background-color: #d5d5d5;
+    letter-spacing: .05em;
+    text-shadow:
+      4px 4px 0px #2c2c2c,
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+
   }
-  
+
   .site-introduction {
     grid-area: 2 / 2 / 2 / 5;
     font-weight: 300;
@@ -119,23 +150,32 @@ a:active {
   }
 }
 .social {
+  color: rgb(204, 204, 204);
   display: flex;
   justify-content: center;
   #github-link {
-    background: #4078c0;
+    background: #4077c0;
+    @include grayscale(50%);
     &:hover {
       background: darken(#4078c0, 20%);
+      @include grayscale(0%);
     }
   }
   #twitter-link {
-    background: #1DA1F2;
+    background: rgb(29, 160, 242);
+    @include grayscale(50%);
     &:hover {
       background: darken(#1DA1F2, 20%);
+      @include grayscale(0%);
     }
   }
   #instagram-link {
     background: #262626;
-    background: darken(#262626, 20%);
+    @include grayscale(50%);
+    &:hover {
+      background: darken(#262626, 20%);
+      @include grayscale(0%);
+    }
   }
   a {
     text-decoration: none;
