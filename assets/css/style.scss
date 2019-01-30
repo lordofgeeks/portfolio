@@ -53,6 +53,10 @@ a:active {
   outline: none;
 }
 
+.bold-font {
+  font-weight: 400;
+}
+
 // For fadein transition
 #wrapper {
   display: none;
@@ -74,7 +78,7 @@ a:active {
 .header {
   display: flex;
   // justify-content: space-between;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: flex-end;
   // font-family: 'Fira Sans', sans-serif;
 
@@ -126,6 +130,7 @@ a:active {
     // grid-column-end: 2;
     // grid-row-start: 1;
     // grid-row-end: 5;
+    text-transform: uppercase;
     align-self: end;
     font-weight: 800;
     font-size: 82pt;
@@ -198,7 +203,7 @@ a:active {
 }
 
 .underline--magical-red {
-  background-image: linear-gradient(120deg, #fa8484 0%, #b62c2c 100%);
+  background-image: linear-gradient(120deg, #d16d6d 0%, #b62c2c 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;

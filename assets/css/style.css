@@ -38,6 +38,10 @@ a:active {
   outline: none;
 }
 
+.bold-font {
+  font-weight: 400;
+}
+
 #wrapper {
   display: none;
 }
@@ -63,9 +67,9 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -123,6 +127,7 @@ a:active {
   -ms-grid-column: 2;
   -ms-grid-column-span: 5;
   grid-area: 2 / 2 / 1 / 7;
+  text-transform: uppercase;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
@@ -224,7 +229,7 @@ a:active {
 }
 
 .underline--magical-red {
-  background-image: linear-gradient(120deg, #fa8484 0%, #b62c2c 100%);
+  background-image: linear-gradient(120deg, #d16d6d 0%, #b62c2c 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
