@@ -1,7 +1,4 @@
-<!-- <div class="about-title"> -->
-  <!-- ABOUT -->
-<!-- </div> -->
-<div class="about-content">
+<!-- <div class="about-content"> -->
   <div class="about-block">
     <span class="txt anim-text-flow">
 IMNOT
@@ -11,36 +8,42 @@ REST
 BEFORE
 IGET
 TIRED
+ ‏
     </span>
-    <div id="messenger"></div>
   </div>
 
   <div class="about-me">
     <div>
-      <h2>Who?</h2>
+      <h2><span>Who?</span></h2>
       <p>
-        A tech enthusiast who dabs in various forms of technology.
-        <br />Graduated from SIT in 2019.
-        <br />BEng (Hons) Information and Communications Technology (Software Engineering)
+        A tech enthusiast who dabbles in various forms of technology.
+        <br />
+        <br />[ 2019 ] Singapore Institute of Technology
+        <br />BEng (Hons) Information and Communications Technology
+        <br /><span class="text-muted">(Software Engineering)</span>
       </p>
     </div>
 
     <div>
-      <h2>What?</h2>
-      <p>Nani?</p>
-    </div>
-
-    <div>
       <h2>Where?</h2>
-      <p>Singapore</p>
+      <p>
+        [ 2018 - Current ]
+        <br />Associate Software Engineer @ Govtech Singapore
+        <br />
+        <br />[ 2018-2018 ]
+        <br />Associate Security Consultant @ Pulsesecure Pte. Ltd
+        <br />
+        <br />[ 2017-2018 ]
+        <br />Freelance web designer @ Paperspace Pte. Ltd
+      </p>
+
     </div>
   </div>
-</div>
+<!-- </div> -->
 
 <script>
 $('.txt').html(function(i, html) {
   var chars = $.trim(html).split("");
-
   return '<span>' + chars.join('</span><span>') + '</span>';
 });
 </script>

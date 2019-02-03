@@ -1,5 +1,5 @@
 // Variables
-$font-color: rgb(228, 228, 228);
+$font-color: rgb(218, 214, 204);
 $muted-font-color: rgb(177, 177, 177);
 $background-color: #000000;
 // @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -24,6 +24,75 @@ $background-color: #000000;
     7px 7px 0px rgba(0, 0, 0, 0.2);
 }
 
+@mixin deepshadow() {
+  color: #e0dfdc;
+  background-color: #333;
+  letter-spacing: .1em;
+  text-shadow:
+    0 -1px 0 #fff,
+    0 1px 0 #2e2e2e,
+    0 2px 0 #2c2c2c,
+    0 3px 0 #2a2a2a,
+    0 4px 0 #282828,
+    0 5px 0 #262626,
+    0 6px 0 #242424,
+    0 7px 0 #222,
+    0 8px 0 #202020,
+    0 9px 0 #1e1e1e,
+    0 10px 0 #1c1c1c,
+    0 11px 0 #1a1a1a,
+    0 12px 0 #181818,
+    0 13px 0 #161616,
+    0 14px 0 #141414,
+    0 15px 0 #121212,
+    0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
+@mixin insetshadow() {
+  color: #202020;
+  background-color: #2d2d2d;
+  letter-spacing: .1em;
+  text-shadow:
+    -1px -1px 1px #111,
+    2px 2px 1px #363636;
+}
+
+@mixin elegantshadow() {
+  color: #131313;
+  background-color: #e7e5e4;
+  letter-spacing: .15em;
+  text-shadow:
+    1px -1px 0 #767676,
+    -1px 2px 1px #737272,
+    -2px 4px 1px #767474,
+    -3px 6px 1px #787777,
+    -4px 8px 1px #7b7a7a,
+    -5px 10px 1px #7f7d7d,
+    -6px 12px 1px #828181,
+    -7px 14px 1px #868585,
+    -8px 16px 1px #8b8a89,
+    -9px 18px 1px #8f8e8d,
+    -10px 20px 1px #949392,
+    -11px 22px 1px #999897,
+    -12px 24px 1px #9e9c9c,
+    -13px 26px 1px #a3a1a1,
+    -14px 28px 1px #a8a6a6,
+    -15px 30px 1px #adabab,
+    -16px 32px 1px #b2b1b0,
+    -17px 34px 1px #b7b6b5,
+    -18px 36px 1px #bcbbba,
+    -19px 38px 1px #c1bfbf,
+    -20px 40px 1px #c6c4c4,
+    -21px 42px 1px #cbc9c8,
+    -22px 44px 1px #cfcdcd,
+    -23px 46px 1px #d4d2d1,
+    -24px 48px 1px #d8d6d5,
+    -25px 50px 1px #dbdad9,
+    -26px 52px 1px #dfdddc,
+    -27px 54px 1px #e2e0df,
+    -28px 56px 1px #e4e3e2;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -32,11 +101,7 @@ body {
   font-family: 'Fira Sans', sans-serif;
   background: $background-color;
   color: $font-color;
-
-}
-.bg-image {
-  background-image: url('../images/bg.jpg');
-  opacity: 1;
+  background-image: url('../images/bg-dark.jpg');
   background-color: $background-color;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,12 +109,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  // overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -63,6 +123,10 @@ a:active {
 
 .bold-font {
   font-weight: 400;
+}
+
+.text-muted {
+  color: $muted-font-color;
 }
 
 // For fadein transition
@@ -92,9 +156,9 @@ a:active {
 
   .site-logo {
     background: rgb(56, 56, 56);
-    color: rgb(209, 209, 209);
+    // color: rgb(209, 209, 209);
     border: rgb(133, 133, 133) solid 1px;
-    // color: $font-color;
+    color: $font-color;
     font-weight: 200;
     font-size: 18pt;
     padding: 4px;
@@ -145,7 +209,8 @@ a:active {
     // text-shadow: 0 0 4px rgb(38, 38, 38);
     transition: opacity 0.7s ease-in;
 
-    color: #d5d5d5;
+    // color: #d5d5d5;
+    color: $font-color;
     // background-color: #d5d5d5;
     letter-spacing: .05em;
     @include retroshadow();
@@ -156,7 +221,8 @@ a:active {
     font-weight: 300;
     // text-shadow: 0 0 2px rgb(38, 38, 38);
     font-size: 14pt;
-    color: rgb(238, 238, 238);
+    // color: rgb(238, 238, 238);
+    color: $font-color;
   }
 }
 .social {
@@ -230,57 +296,50 @@ a:active {
   }
 }
 
-// .about-title {
-//   grid-area: 1 / 3 / 1 / 6;
-//   font-size: 26pt;
-//   font-weight: 800;
-//   text-align: center;
-// }
-.about-content {
-  grid-area: 1 / 1 / 3 / 8;
-  text-align: center;
-  font-weight: 200;
-  display: grid;
-  text-align: left;
-  // border: 1px solid #555;
 
 
-  .about-block {
-    // grid-area: 1 / 1 / 1 / 1;
-    text-align: right;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    text-transform: uppercase;
-    font-family: 'Share Tech Mono',  monospace;;
-    font-size: 32pt;
-    // font-weight: 400;
-    letter-spacing: 1em;
-    font-weight: 800;
-    @include retroshadow();
-  }
-
-  h2 {
-    font-family: 'Share Tech Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 1em;
-    margin-bottom: 10px;
-    @include retroshadow();
-  }
-  .about-me {
-    // grid-area: 2 / 2 / 1 / 1;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-
+.about-block {
+  text-align: right;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  text-transform: uppercase;
+  font-family: 'Share Tech Mono',  monospace;;
+  font-size: 32pt;
+  // font-weight: 400;
+  letter-spacing: 1em;
+  font-weight: 600;
+  @include retroshadow();
+  align-self: center;
+}
+h2 {
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1.5em;
+  margin-bottom: 10px;
+  @include retroshadow();
+}
+.about-me {
+  // grid-area: 2 / 2 / 1 / 1;
+  align-self: center;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  font-weight: 400;
   div {
-    margin-bottom: 25px;
+    margin-bottom: 45px;
   }
 }
 
+.portfolio-content {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  text-align: center;
+}
 
 /*
  * Animation module with all animation code
@@ -338,8 +397,8 @@ a:active {
 @media screen and (max-width: 640px) {
   .grid {
     margin: 0;
-    height: 100vh;
-    grid-template-rows: 50px 1fr 120px;
+    max-height: 100%4;
+    grid-template-rows: 60px 1fr 120px;
   }
   .header {
     align-items: flex-start;
@@ -353,6 +412,7 @@ a:active {
     }
   }
   .content {
+    grid-template-rows: 33% 33% 33%;
     .site-greetings {
       grid-area: 1 / 1 / 1 / 7;
       text-align: center;
@@ -362,5 +422,32 @@ a:active {
       grid-area: 2 / 1 / 2 / 7;
       text-align: center;
     }
+
+    .about-block {
+      // grid-area: 1 / 1 / 4 / 3;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      grid-column-start: 3;
+      grid-column-end: 6;
+      font-size: 16pt;
+      display: none;
+    }
+    .about-me {
+      // grid-area: 2 / 2 / 3 / 7;
+      margin-top: 30px;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 6;
+
+      h2 {
+        font-size: 16pt;
+      }
+
+      div {
+        margin-bottom: 10px;
+      }
+    }
+
   }
 }
