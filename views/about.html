@@ -1,18 +1,46 @@
-<div class="about-title">
+<!-- <div class="about-title"> -->
   <!-- ABOUT -->
-</div>
+<!-- </div> -->
 <div class="about-content">
-  <h1>About me</h1>
-  <p>I'm not lazy, <br/>I just rest before I get tired.</p>
-  <br />
-  <h2>Who?</h2>
-  <p>A tech enthusiast who dabs in various forms of technology. <br />
-    Graduated from SIT in 2019. BEng (Hons) Information and Communications Technology (Software Engineering)
-  </p>
-  <br />
-  <h2>What?</h2>
-  <p>Nani?</p>
-  <br />
-  <h2>Where?</h2>
-  <p>Singapore</p>
+  <div class="about-block">
+    <span class="txt anim-text-flow">
+IMNOT
+LAZY
+IJUST
+REST
+BEFORE
+IGET
+TIRED
+    </span>
+    <div id="messenger"></div>
+  </div>
+
+  <div class="about-me">
+    <div>
+      <h2>Who?</h2>
+      <p>
+        A tech enthusiast who dabs in various forms of technology.
+        <br />Graduated from SIT in 2019.
+        <br />BEng (Hons) Information and Communications Technology (Software Engineering)
+      </p>
+    </div>
+
+    <div>
+      <h2>What?</h2>
+      <p>Nani?</p>
+    </div>
+
+    <div>
+      <h2>Where?</h2>
+      <p>Singapore</p>
+    </div>
+  </div>
 </div>
+
+<script>
+$('.txt').html(function(i, html) {
+  var chars = $.trim(html).split("");
+
+  return '<span>' + chars.join('</span><span>') + '</span>';
+});
+</script>
