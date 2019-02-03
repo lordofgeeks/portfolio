@@ -11,50 +11,192 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-  <div class="grid">
-    <div data-include="header" class="header"></div>
-    <div data-include="default" class="content" id="wrapper"></div>
-    <div data-include="social" class="social"></div>
+  <div class="splash-container">
+    <div class="splash">
+      <span id="site-greeting">Hello</span>
+      <br />My name is Kai Hong
+      <br />I'm a <span class="splash-highlight">Software Engineer</span>
+      <br />
+      <span class="splash-sub">Associate Software Engineer @ Govtech</span>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content">
+      <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
+
+      <div class="pure-g">
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+          <h3 class="content-subhead">
+            <i class="fa fa-rocket"></i>
+            Get Started Quickly
+          </h3>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+          </p>
+        </div>
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <h3 class="content-subhead">
+            <i class="fa fa-mobile"></i>
+            Responsive Layouts
+          </h3>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+          </p>
+        </div>
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <h3 class="content-subhead">
+            <i class="fa fa-th-large"></i>
+            Modular
+          </h3>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+          </p>
+        </div>
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <h3 class="content-subhead">
+            <i class="fa fa-check-square-o"></i>
+            Plays Nice
+          </h3>
+          <p>
+            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+        <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor.
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+      <div class="pure-g">
+        <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+
+        </div>
+
+        <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+          <h4>Contact Us</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+
+          <h4>More Information</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </body>
 
 <script src="assets/js/custom.js"></script>
 <script>
-function* getGreeting() {
-  let index = 0;
-  let greetings = [
-    "你好",
-    "おはよう",
-    "SALVE",
-    "HEI",
-    "SALUT",
-    "MARHABA",
-    "HOLA",
-    "GUTEN TAG",
-    "NAMASTE",
-    "HELLO",
-  ];
-  while(true) {
-    yield greetings[index];
-    index++;
-    if(index >= greetings.length) {
-      index = 0;
+  // ——————————————————————————————————————————————————
+// TextScramble
+// ——————————————————————————————————————————————————
+
+class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = '!<>-_\\/[]{}—=+*^?#________'
+    this.update = this.update.bind(this)
+  }
+  setText(newText) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => this.resolve = resolve)
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 50)
+      const end = start + Math.floor(Math.random() * 40)
+      this.queue.push({ from, to, start, end })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="dud">${char}</span>`
+      } else {
+        output += from
+      }
+    }
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
     }
   }
-}
-function setGreeting() {
-  let element = document.getElementById("site-greeting");
-  if(element) {
-    element.style.opacity = 0;
-    setTimeout(() => {
-      element.innerHTML = gg.next().value;
-      // element.innerHTML = gg.next().value + "!";
-      element.style.opacity = 1;
-    }, 750);
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
   }
 }
-// gg = Greeting Generator
-var gg = getGreeting();
-var greet_timer = setInterval(setGreeting, 4000); // 3 seconds
+
+  // ——————————————————————————————————————————————————
+  // Example
+  // ——————————————————————————————————————————————————
+
+  const phrases = [
+    "你好",
+    "おはよう",
+    "Salve",
+    "Hei",
+    "Salut",
+    "Marhaba",
+    "Hola",
+    "Namaste",
+    "Hello",
+  ]
+
+  const el = document.querySelector('#site-greeting')
+  const fx = new TextScramble(el)
+
+  let counter = 0
+  const next = () => {
+    fx.setText(phrases[counter]).then(() => {
+      setTimeout(next, 2000)
+    })
+    counter = (counter + 1) % phrases.length
+  }
+
+  next()
 </script>
 </html>
