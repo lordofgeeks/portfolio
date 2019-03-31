@@ -1,1 +1,0 @@
-docker run --name portfolio -p 8081:80 -v d:/Projects/portfolio:/usr/share/nginx/html:ro -d nginx:1.15.8-alpine
