@@ -13,7 +13,7 @@ p {
 }
 
 li > p {
-  margin-left: 43px;
+  /* margin-left: 43px; */
   margin-top: 0px;
 }
 
@@ -27,7 +27,7 @@ strong {
     animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
 
     animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-    animation-duration:1.5s;
+    animation-duration:1.2s;
 }
 
 .push-down {
@@ -38,7 +38,7 @@ strong {
 
 .push-down-one-page {
   position: relative;
-  top: 100vh;
+  top: 95vh;
   /* height: 100vh; */
   padding-top: 10vh;
   padding-bottom: 30vh;
