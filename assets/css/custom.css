@@ -1,0 +1,49 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14pt;
+}
+
+h4 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-top: 30px;
+}
+
+strong {
+  font-weight: 800;
+}
+
+.push-down {
+  position: fixed;
+  margin-top: 26vh;
+  height: 100vh;
+}
+
+.push-down-one-page {
+  position: relative;
+  top: 100vh;
+  /* height: 100vh; */
+  padding-top: 10vh;
+  padding-bottom: 30vh;
+}
+
+.my-name {
+  font-size: 90pt;
+  line-height: 85pt;
+  font-weight: 600;
+  /* white-space: nowrap; */
+}
+
+.subtext {
+  /* white-space: nowrap; */
+  color: gray;
+}
+
+@media only screen and (max-width: 768px) {
+  .push-down-one-page {
+    background-color: white;
+  }
+}
