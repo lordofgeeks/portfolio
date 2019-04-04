@@ -30,6 +30,12 @@ strong {
     animation-duration:1.2s;
 }
 
+.badge {
+  filter: brightness(120%);
+  opacity: 0.8;
+  font-weight: 200;
+}
+
 .push-down {
   position: fixed;
   margin-top: 26vh;
@@ -51,6 +57,10 @@ strong {
   /* white-space: nowrap; */
 }
 
+ul {
+  margin-top: 60px;
+}
+
 .k-letter {
   letter-spacing: 0.08em;
 }
@@ -63,7 +73,7 @@ strong {
   color: gray;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 970px) {
   .push-down-one-page {
     background-color: white;
   }
