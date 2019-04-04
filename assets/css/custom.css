@@ -51,6 +51,13 @@ strong {
   /* white-space: nowrap; */
 }
 
+.k-letter {
+  letter-spacing: 0.08em;
+}
+
+.a-letter {
+  letter-spacing: 0.03em;
+}
 .subtext {
   /* white-space: nowrap; */
   color: gray;
