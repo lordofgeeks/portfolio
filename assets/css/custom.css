@@ -74,6 +74,11 @@ ul {
   color: gray;
 }
 
+.aws-icon-align {
+  position: relative;
+  top: 2px;
+}
+
 @media only screen and (max-width: 970px) {
   .push-down-one-page {
     background-color: white;
