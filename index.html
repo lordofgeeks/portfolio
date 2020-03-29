@@ -31,10 +31,14 @@
   <link rel="stylesheet" href="assets/css/fontawesome/all.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script defer src="assets/js/bootstrap.bundle.min.js"></script>
   <script defer src="assets/js/fontawesome/all.js"></script>
 </head>
 
 <body>
+  <!-- <div role="main" class="container-fluid" style="max-width: 1180px;"> -->
   <div role="main" class="container">
     <div class="row push-down fade-in">
       <div class="col-lg-6 col-md-12 col-xs-12">
@@ -44,52 +48,53 @@
       </div>
     </div>
     <div class="row push-down-one-page">
-      <div class="col-lg-6 col-md-12 offset-lg-6">
+      <div class="col-lg-7 col-md-12 offset-lg-5">
         <h1>Hi! I'm <mark>Kai Hong</mark>, a full stack developer with experience in devops and security. Currently
           making a
-          difference for Singapore citizens at Govtech.</h1>
+          difference for Singapore citizens at Govtech <img src="assets/images/flag-singapore-apple.png" height="38px"
+            style="margin-bottom: 8px;" />
+        </h1>
         <p>
-          Recently graduated from university in 2019, my journey in the tech world began when I first saw my dad take
-          apart a <strong>Pentium II</strong> computer. It left a deep impression, which lead me to pick up HTML as my
-          first language at 12. The goal was to modify the Blogspot layout I had then, and I have been <a
-            href="https://blog.lordofgeeks.com/" target="_blank" rel="noreferrer">blogging</a> rather consistently ever
-          since.
+          Welcome <span class="bg-light">&nbsp;{ person }&nbsp;</span> looking at my portfolio, I hope you find what you
+          are looking for. You can reach me through my linkedin, or check out my other links.
         </p>
         <p>
-          Fast forward a few years, I've taken on numerous projects to perfect my craft of creating software. One
-          notable project in school involved creating a CRM System for Fooyo Pte. Ltd using PHP and Bootstrap, it won
-          the <a
-            href="https://www.singaporetech.edu.sg/students/awards/jing-king-tech-book-prize-integrative-team-project"
-            target="_blank" rel="noreferrer">Jing King Tech book prize</a> for being the most outstanding project.
+          <ul class="list-inline link-list">
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/kai-hong-koh-877b4612b/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/whoiskai" target="_blank" rel="noreferrer"><i class="fab fa-github-square"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://twitter.com/lordofgeeks" target="_blank" rel="noreferrer"><i class="fab fa-twitter-square"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://blog.lordofgeeks.com/" target="_blank" rel="noreferrer"><i class="fas fa-rss-square"></i></a>
+            </li>
+          </ul>
         </p>
-        <p>
-          In my free time, I took up freelance projects, some of which were from my university. It includes creating a
-          <strong>code grading system</strong>, which will grade students' code submissions in a sandboxed environment
-          as well as a <strong>Portfolio CMS</strong> for my professors. I've also developed and managed the WordPress
-          website for <a href="https://paperspace.asia/" target="_blank" rel="noreferrer">Paperspace</a>, an
-          architecture firm.
-        </p>
-        <!-- <h4>Worked with</h4> -->
 
-        <p class="mt-5">
+        <p>
           <span class="text-muted">Worked with:</span>
+          <span class="badge badge-primary">Golang</span>
+          <span class="badge badge-primary">Javscript/Typescript</span>
           <span class="badge badge-primary">PHP</span>
+          <span class="badge badge-primary">React/Redux</span>
           <span class="badge badge-primary">Spring Boot</span>
           <span class="badge badge-primary">Spring Batch</span>
-          <!-- <span class="badge badge-primary">Apache Spark</span> -->
-          <span class="badge badge-primary">Apache Kafka</span>
-          <span class="badge badge-primary">Javscript</span>
-          <span class="badge badge-primary">React/Redux</span>
           <span class="badge badge-primary">Vue/Vuex</span>
+          <span class="badge badge-info">DynamoDB</span>
           <span class="badge badge-info">MySQL</span>
           <span class="badge badge-info">MongoDB</span>
-          <!-- <span class="badge badge-info">Oracle</span> -->
           <span class="badge badge-info">Postgres</span>
-          <span class="badge badge-secondary">Docker</span>
-          <span class="badge badge-secondary">Kubernetes</span>
-          <span class="badge badge-secondary">Terraform</span>
+          <span class="badge badge-secondary">AWS</span>
           <span class="badge badge-secondary">Ansible</span>
+          <span class="badge badge-secondary">Docker</span>
           <span class="badge badge-secondary">Gitlab CI/CD</span>
+          <span class="badge badge-secondary">Kubernetes/EKS</span>
+          <span class="badge badge-secondary">Packer</span>
+          <span class="badge badge-secondary">Terraform/Terragrunt</span>
           <span class="badge badge-danger">Burp Suite</span>
           <span class="badge badge-danger">Nessus</span>
           <span class="badge badge-danger">MobSF</span>
@@ -97,9 +102,230 @@
           <span class="badge badge-danger">Needle</span>
         </p>
 
-        <!-- <h4>Qualifications</h4> -->
-        <ul class="list-group">
+        <br />
+        <!-- govtech section -->
+        <div class="card">
+          <div class="card-header bg-light experience" id="govtech" data-toggle="collapse"
+            data-target="#collapseGovtech" aria-expanded="true" aria-controls="collapseGovtech">
+            <h4 class="mb-0">
+              Govtech <span class="badge badge-light">From 2019 to Present</span>
+            </h4>
+          </div>
+          <div id="collapseGovtech" class="collapse multi-collapse show" aria-labelledby="govtech">
+            <div class="card-body">
+              <h4 class="experience-name">My Careers Future (MCF)</h4>
+              <span class="text-muted">From Mar 2020 to Present</span>
+              <p class="experience-text">MCF is a jobs portal that focuses on the hiring of local professionals,
+                managers, executives, and technicians (PMETs) in later stages of their careers.</p>
+              <table class="table table-details">
+                <tbody>
+                  <tr>
+                    <th scope="row" width="22%">Role</th>
+                    <td>Software Engineer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Link</th>
+                    <td><a href="https://www.mycareersfuture.sg/" target="_blank" rel="noreferrer">MyCareersFuture
+                        SG</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tech Stack</th>
+                    <td>Typescript/Javascript, React, Golang, Gitlab CI, Ruby on Rails</td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="list-group highlights-list">
+                <li class="list-group-item pt-2 pb-2 list-group-item-light font-weight-bold">Highlights</li>
+                <li class="list-group-item pt-2 pb-2">Designed and implemented mock server for 3rd party APIs</li>
+              </ul>
+              <hr class="style-two" />
+              <h4 class="experience-name">Citizen Disbursement System (CDS)</h4>
+              <span class="text-muted">From Dec 2018 to Mar 2020</span>
+              <p class="experience-text">CDS is a backend heavy data processing system for assessing eligibility and
+                allocation using a rule engine to disburse funds to citizens.</p>
+              <table class="table table-details">
+                <tbody>
+                  <tr>
+                    <th scope="row" width="22%">Role</th>
+                    <td>Devops Engineer / Software Engineer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Link</th>
+                    <td>Internal System</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tech Stack</th>
+                    <td>Javascript, Golang, React, Java, Sprint Boot, Sprint Batch, Gitlab CI, Kubernetes, AWS, GCC</td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="list-group highlights-list">
+                <li class="list-group-item pt-2 pb-2 list-group-item-light font-weight-bold">Highlights</li>
+                <li class="list-group-item pt-2 pb-2">Architected cloud infrastructure for AWS</li>
+                <li class="list-group-item pt-2 pb-2">Implemented IaC for all deployments</li>
+                <li class="list-group-item pt-2 pb-2">Automated versioning for all CI pipelines</li>
+                <li class="list-group-item pt-2 pb-2">Designed and developed file gateway for ingress/egress of files
+                </li>
+                <li class="list-group-item pt-2 pb-2">Designed and implemented POC for frontend</li>
+                <li class="list-group-item pt-2 pb-2">Speed up CI pipeline by 60%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- fresh grad section -->
+        <div class="card">
+          <div class="card-header bg-light experience" id="freshGrad" data-toggle="collapse"
+            data-target="#collapseFreshGrad" aria-expanded="false" aria-controls="collapseFreshGrad">
+            <h4 class="mb-0">
+              Origin story <span class="badge badge-light">Before 2019</span>
+            </h4>
+          </div>
+          <div id="collapseFreshGrad" class="collapse multi-collapse" aria-labelledby="freshGrad">
+            <div class="card-body">
+              <p>
+                Graduated from Singapore Institute of Technology in 2019, my journey in the tech world began when I
+                first saw my dad
+                take
+                apart a <strong>Pentium II</strong> computer. It left a deep impression, which lead me to pick up HTML
+                as my
+                first language at 12. The goal was to modify the Blogspot layout I had then, and I have been <a
+                  href="https://blog.lordofgeeks.com/" target="_blank" rel="noreferrer">blogging</a> rather consistently
+                ever
+                since.
+              </p>
+              <p>
+                Fast forward a few years, I've taken on numerous projects to perfect my craft of creating software. One
+                notable project in school involved creating a CRM System for Fooyo Pte. Ltd using PHP and Bootstrap, it
+                won
+                the <a
+                  href="https://www.singaporetech.edu.sg/students/awards/jing-king-tech-book-prize-integrative-team-project"
+                  target="_blank" rel="noreferrer">Jing King Tech book prize</a> for being the most outstanding project.
+              </p>
+              <p>
+                In my free time, I took up freelance projects, some of which were from my university. It includes
+                creating a
+                <strong>code grading system</strong>, which will grade students' code submissions in a sandboxed
+                environment
+                as well as a <strong>Portfolio CMS</strong> for my professors. I've also developed and managed the
+                WordPress
+                website for <a href="https://paperspace.asia/" target="_blank" rel="noreferrer">Paperspace</a>, an
+                architecture firm.
+              </p>
+              <p>
+                Somewhere along the road, I considered switching to security and took on a one year internship at
+                <strong>PulseSecure</strong> where I worked on real assignments pentesting various systems. Through the
+                one year, I reaffirmed that my passion is in <i>creating things</i> and <i>not breaking things</i>!
+              </p>
+
+              <hr class="style-two" />
+
+              <h4 class="experience-name">PulseSecure</h4>
+              <span class="text-muted">From Jan 2018 to Dec 2018</span>
+              <p class="experience-text">Pulse secure is a CREST certified IT security consulting company that offers
+                various services such as Audit & Review, Overall Consultation, Assessment, Training and Development</p>
+              <table class="table table-details">
+                <tbody>
+                  <tr>
+                    <th scope="row" width="22%">Role</th>
+                    <td>Associate Security Consultant</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Link</th>
+                    <td><a href="https://www.pulsesecure.com/" target="_blank" rel="noreferrer">PulseSecure Pte Ltd.</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tech Stack</th>
+                    <td>Burp Suite, Nessus, MobSF, Pentestbox, Needle</td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="list-group highlights-list">
+                <li class="list-group-item pt-2 pb-2 list-group-item-light font-weight-bold">Highlights</li>
+                <li class="list-group-item pt-2 pb-2">Pentested various web applications including MNCs and Government
+                </li>
+                <li class="list-group-item pt-2 pb-2">Designed and developed a training management software for security
+                  awareness</li>
+              </ul>
+
+              <hr class="style-two" />
+
+              <h4 class="experience-name">Paperspace</h4>
+              <span class="text-muted">From July 2017 to Oct 2018</span>
+              <p class="experience-text">Paperspace is a interior design company that creates beautiful open co-working
+                spaces.</p>
+              <table class="table table-details">
+                <tbody>
+                  <tr>
+                    <th scope="row" width="22%">Role</th>
+                    <td>Web Designer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Link</th>
+                    <td><a href="https://paperspace.asia/" target="_blank" rel="noreferrer">Paperspace</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tech Stack</th>
+                    <td>Wordpress, cPanel</td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="list-group highlights-list">
+                <li class="list-group-item pt-2 pb-2 list-group-item-light font-weight-bold">Highlights</li>
+                <li class="list-group-item pt-2 pb-2">Web hosting setup and maintenance</li>
+              </ul>
+
+              <hr class="style-two" />
+
+              <h4 class="experience-name">Code Dr.</h4>
+              <span class="text-muted">From Mar 2017 to Aug 2017</span>
+              <p class="experience-text">Code Dr. is a code grading system which will analyse and grade students' code
+                submissions in a sandboxed environment</p>
+              <table class="table table-details">
+                <tbody>
+                  <tr>
+                    <th scope="row" width="22%">Role</th>
+                    <td>Software Engineer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Link</th>
+                    <td>Deprecated</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tech Stack</th>
+                    <td>Burp Suite, Nessus, MobSF, Pentestbox, Needle</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- things i've written section -->
+        <div class="card card-articles">
+          <div class="card-header bg-light">
+            Articles Written
+          </div>
+          <div class="card-body">
+            <ul class="article-list">
+              <li><a href="https://medium.com/@whoiskai/immutability-from-experience-part-1-5661fb268c27"
+                  target="_blank">Immutability from experience: part 1</a></li>
+              <li><a href="https://blog.gds-gov.tech/how-going-for-talks-improved-my-common-sense-f0ab954add35"
+                  target="_blank">How going for talks improved my common sense</a></li>
+              <li><a href="https://medium.com/@whoiskai/why-i-am-obsessed-with-keyboards-36a8b817f27c"
+                  target="_blank">Why I am obsessed with keyboards</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="list-group" id="qualifications">
           <li class="list-group-item list-group-item-light">Qualifications</li>
+          <li class="list-group-item">
+            <span class="badge badge-light">2020</span>
+            Completed AWS Advanced Architecting Course
+            <i class="text-muted fab fa-aws aws-icon-align"></i>
+          </li>
           <li class="list-group-item">
             <span class="badge badge-light">2019</span>
             Completed Redhat Ansible Course (DO407)
@@ -148,7 +374,7 @@
             </p>
           </li>
         </ul>
-        <h4>Links</h4>
+        <h4 class="links-section">Links</h4>
         <a href="https://blog.lordofgeeks.com/" target="_blank" rel="noreferrer">Blog</a>
         <br />
         <a href="https://github.com/whoiskai" target="_blank" rel="noreferrer">Github</a>
