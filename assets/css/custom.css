@@ -78,15 +78,17 @@ hr.style-two {
 }
 
 .k-letter {
-  letter-spacing: 0.08em;
+  letter-spacing: 0.13em;
 }
 
 .a-letter {
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
 }
 .subtext {
-  /* white-space: nowrap; */
+  white-space: nowrap;
   color: gray;
+  position: relative;
+  left: 8px;
 }
 
 .aws-icon-align {
@@ -96,6 +98,13 @@ hr.style-two {
 
 .experience {
   cursor: pointer;
+  color: #1d1d1d;
+  transition: background 0.3s linear, color 0.1s linear;
+}
+
+.experience:hover {
+  background-color: #ff6675;
+  color: #ffffff;
 }
 
 .experience-text {
@@ -119,10 +128,12 @@ ul.link-list > li {
 
 ul.link-list a {
   color: rgb(95, 95, 95);
+  transition: all 0.2s ease-in-out;
 }
 
 ul.link-list a:hover {
-  color: #007bff;
+  /* color: #007bff; */
+  color: #ff6675;
 }
 
 ul.highlights-list {
