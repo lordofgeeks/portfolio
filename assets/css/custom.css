@@ -69,26 +69,23 @@ hr.style-two {
 .my-name {
   font-size: 90pt;
   line-height: 85pt;
-  font-weight: 600;
+  font-weight: 900;
   /* white-space: nowrap; */
 }
 
-#qualifications {
-  margin-top: 30px;
-}
-
 .k-letter {
-  letter-spacing: 0.13em;
+  letter-spacing: 0.11em;
 }
 
 .a-letter {
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 .subtext {
   white-space: nowrap;
   color: gray;
   position: relative;
   left: 8px;
+  font-weight: 300;
 }
 
 .aws-icon-align {
@@ -99,7 +96,7 @@ hr.style-two {
 .experience {
   cursor: pointer;
   color: #1d1d1d;
-  transition: background 0.3s linear, color 0.1s linear;
+  transition: background 0.1s linear, color 0.1s linear;
 }
 
 .experience:hover {
@@ -117,6 +114,10 @@ hr.style-two {
   margin: 0; */
 }
 
+#qualifications {
+  margin-top: 30px;
+}
+
 ul.link-list {
   font-size: 1.8em;
   color: rgb(95, 95, 95);
@@ -132,8 +133,8 @@ ul.link-list a {
 }
 
 ul.link-list a:hover {
-  /* color: #007bff; */
-  color: #ff6675;
+  color: #007bff;
+  /* color: #ff6675; */
 }
 
 ul.highlights-list {
