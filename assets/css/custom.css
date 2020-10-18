@@ -46,10 +46,40 @@ hr.style-two {
     animation-duration:1.2s;
 }
 
-.badge {
+.badge-timeline {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.badge-skills {
   filter: brightness(120%);
   opacity: 0.8;
   font-weight: 200;
+}
+
+.badge-qualif {
+  font-size: 1em;
+  width: 40px;
+}
+
+.badge-year {
+  font-weight: 700;
+}
+
+.badge-aws {
+  color: #FF9900;
+}
+
+.badge-redhat {
+  color: #F5606D;
+}
+
+.badge-google {
+  color: #4285F4;
+}
+
+.qualif-desc {
+  padding-left: 88px;
 }
 
 .push-down {
@@ -90,7 +120,7 @@ hr.style-two {
 
 .aws-icon-align {
   position: relative;
-  top: 2px;
+  top: 4px;
 }
 
 .experience {
